@@ -1,0 +1,55 @@
+{
+    "extends": [
+      "airbnb",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "no-use-before-define": "off",
+      "react/jsx-wrap-multilines": "off",
+      "arrow-body-style": "off",
+      "object-curly-newline": "off",
+      "operator-linebreak": "off",
+      "no-param-reassign": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "max-len": [0, 100, 2, { "ignoreUrls": true }],
+      "react/jsx-props-no-spreading": "off",
+      "@typescript-eslint/no-use-before-define": ["error"],
+      "import/prefer-default-export": 0,
+      "react/no-array-index-key": 0,
+      "react/jsx-filename-extension": [
+        2,
+        {
+          "extensions": [".tsx", ".png", ".jpeg"]
+        }
+      ],
+      "import/no-unresolved": 0,
+      "import/extensions": 0
+    },
+    "settings": {
+      "import/resolver": {
+        "babel-plugin-root-import": {
+          "rootPathPrefix": "~/",
+          "rootPathSuffix": "src"
+        }
+      },
+      "import/parsers": {
+        "@typescript-eslint/parser": [".ts", ".tsx"]
+      },
+      "import/extensions": [".ts", ".tsx", ".png", ".jpeg"],
+      "react": {
+        "version": "detect"
+      }
+    }
+  }
+  
