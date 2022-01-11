@@ -2,9 +2,9 @@
 
 Test application for CoinGecko API V3 (https://www.coingecko.com/api/documentations/v3#/)
 
-<img src="https://i.ibb.co/pfStVpC/Simulator-Screen-Shot-i-Phone-8-2022-01-11-at-15-06-43.png" width="186">
+<img src="https://i.ibb.co/pfStVpC/Simulator-Screen-Shot-i-Phone-8-2022-01-11-at-15-06-43.png" width="375">
 
-<img src="https://i.ibb.co/LztzGKf/Simulator-Screen-Shot-i-Phone-8-2022-01-11-at-15-06-49.png" width="186">
+<img src="https://i.ibb.co/LztzGKf/Simulator-Screen-Shot-i-Phone-8-2022-01-11-at-15-06-49.png" width="375">
 
 ## How to run
 
