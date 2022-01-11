@@ -2,9 +2,9 @@
 
 Test application for CoinGecko API V3 (https://www.coingecko.com/api/documentations/v3#/)
 
-![screenshot1](https://i.ibb.co/pfStVpC/Simulator-Screen-Shot-i-Phone-8-2022-01-11-at-15-06-43.png)
+<img src="https://i.ibb.co/pfStVpC/Simulator-Screen-Shot-i-Phone-8-2022-01-11-at-15-06-43.png" width="375" height="667">
 
-![screenshot2](https://i.ibb.co/LztzGKf/Simulator-Screen-Shot-i-Phone-8-2022-01-11-at-15-06-49.png)
+<img src="https://i.ibb.co/LztzGKf/Simulator-Screen-Shot-i-Phone-8-2022-01-11-at-15-06-49.png" width="375" height="667">
 
 ## How to run
 
@@ -29,10 +29,6 @@ Download on your Android device coin_gecko.apk file in the root of this repo. Ju
 
 ```
 
-### Components
-
-Folder of shared components
-
 ## Core
 
 This folder contains everything for interacting with the server, the global storage, etc.
@@ -52,6 +48,8 @@ This folder contains:
 **api.ts** - this file contains an instance of an HTTP client (axios), which is used by services and which mutates these requests in some way (to transfer any headers, for example).
 
 ## Others
+
+**components** - folder of shared components
 
 **navigation** - the application navigation tree is stored in this folder.
 
