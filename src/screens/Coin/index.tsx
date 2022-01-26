@@ -41,14 +41,16 @@ const CoinScreen: React.FC<PropTypes> = React.memo(({ navigation, route }: PropT
 
   const fetchCoinData = React.useCallback(() => {
     dispatch(actions.coin.sendCoinRequest(route.params.id));
-  }, [route.params.id]);
+  }, [dispatch, route.params.id]);
 
   React.useEffect(() => {
     fetchCoinData();
-  }, []);
+  }, [fetchCoinData]);
 
   const onPressLink = React.useCallback((url: string) => {
-    if (!url) return;
+    if (!url) {
+      return;
+    }
     Linking.openURL(url).catch(() => {
       Alert.alert('Link opening error');
     });
@@ -112,11 +114,13 @@ const CoinScreen: React.FC<PropTypes> = React.memo(({ navigation, route }: PropT
               <Text category="label">Homepage:</Text>
               <View style={styles.linksBlock}>
                 {coinData?.links?.homepage?.map((link) => {
-                  if (!link) return null;
+                  if (!link) {
+                    return null;
+                  }
                   return (
                     <Text
                       key={link}
-                      style={{ textAlign: 'right' }}
+                      style={styles.linkText}
                       numberOfLines={1}
                       onPress={() => onPressLink(link)}
                       status="info"

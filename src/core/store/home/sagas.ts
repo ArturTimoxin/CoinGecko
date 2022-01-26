@@ -13,7 +13,9 @@ function* coinMarketsRequest(action: actionTypes.CoinMarketsRequest): SagaIterat
       order: action.payload.order,
     });
     let newCoinMarkets = [...state.home.coinMarkets, ...coinMarketsResponse.data];
-    if (action.payload.page === 1) newCoinMarkets = coinMarketsResponse.data;
+    if (action.payload.page === 1) {
+      newCoinMarkets = coinMarketsResponse.data;
+    }
     yield put(actions.coinMarketsSuccess(newCoinMarkets, action.payload.page));
   } catch (error) {
     yield put(actions.coinMarketsError('Ooops, Something went wrong...'));

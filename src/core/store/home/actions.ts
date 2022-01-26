@@ -30,11 +30,11 @@ export function coinMarketsSuccess(
   };
 }
 
-export function coinMarketsError(coinMarketsError: string): actionTypes.CoinMarketsError {
+export function coinMarketsError(coinMarketsErrorText: string): actionTypes.CoinMarketsError {
   return {
     type: actionTypes.COIN_MARKETS_ERROR,
     payload: {
-      coinMarketsError,
+      coinMarketsError: coinMarketsErrorText,
     },
   };
 }

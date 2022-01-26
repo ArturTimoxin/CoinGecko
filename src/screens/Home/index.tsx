@@ -26,37 +26,43 @@ const HomeScreen: React.FC<PropTypes> = React.memo(({ navigation }: PropTypes) =
     HomeState
   >((state) => state.home);
 
-  const fetchCoinMarkets = React.useCallback((coinMarketsPage) => {
-    dispatch(actions.home.sendCoinMarketsRequest(coinMarketsPage));
-  }, []);
+  const fetchCoinMarkets = React.useCallback(
+    (coinMarketsPage: number) => {
+      dispatch(actions.home.sendCoinMarketsRequest(coinMarketsPage));
+    },
+    [dispatch],
+  );
 
   const initialFetchCoinMarkets = React.useCallback(() => {
     fetchCoinMarkets(1);
-  }, []);
+  }, [fetchCoinMarkets]);
 
   React.useEffect(() => {
     initialFetchCoinMarkets();
-  }, []);
+  }, [initialFetchCoinMarkets]);
 
   const onEndReached = React.useCallback(() => {
     const nextPage = page + 1;
     fetchCoinMarkets(nextPage);
   }, [page, fetchCoinMarkets]);
 
-  const renderCoinMarketItem = React.useCallback(({ item }) => {
-    return (
-      <TouchableOpacity onPress={() => navigation.navigate('Coin', { id: item.id })}>
-        <CoinMarketItem
-          symbol={item.symbol}
-          image={item.image}
-          name={item.name}
-          price={item.current_price}
-          low24h={item.low_24h}
-          high24h={item.high_24h}
-        />
-      </TouchableOpacity>
-    );
-  }, []);
+  const renderCoinMarketItem = React.useCallback(
+    ({ item }) => {
+      return (
+        <TouchableOpacity onPress={() => navigation.navigate('Coin', { id: item.id })}>
+          <CoinMarketItem
+            symbol={item.symbol}
+            image={item.image}
+            name={item.name}
+            price={item.current_price}
+            low24h={item.low_24h}
+            high24h={item.high_24h}
+          />
+        </TouchableOpacity>
+      );
+    },
+    [navigation],
+  );
 
   if (coinMarketsError) {
     return <ErrorLayout text={coinMarketsError} onRefresh={initialFetchCoinMarkets} />;

@@ -17,11 +17,11 @@ export function coinSuccess(coin: Coin): actionTypes.CoinSuccess {
   };
 }
 
-export function coinError(coinError: string): actionTypes.CoinError {
+export function coinError(coinErrorText: string): actionTypes.CoinError {
   return {
     type: actionTypes.COIN_ERROR,
     payload: {
-      coinError,
+      coinError: coinErrorText,
     },
   };
 }
